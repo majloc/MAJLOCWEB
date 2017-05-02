@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;eni.fr.bean&apos; to &apos;fr.eni.bean&apos;&#x0D;&#x0A;- Original project: &apos;MAJLOCWEBSERVICE&apos;&#x0D;&#x0A;- Original element: &apos;MAJLOCWEBSERVICE/src/eni.fr.bean&apos;&#x0D;&#x0A;- Renamed element: &apos;MAJLOCWEBSERVICE/src/fr.eni.bean&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;eni.fr.bean&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;eni.fr.bean" name="fr.eni.bean" qualified="false" references="true" stamp="1493736202726" textual="false" version="1.0"/>
+</session>
