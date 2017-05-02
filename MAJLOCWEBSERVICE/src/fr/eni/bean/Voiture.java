@@ -1,9 +1,24 @@
 package fr.eni.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Voiture {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "VOITURE")
+public class Voiture implements Serializable{
+
+
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private double prixParJour;
 	private String plaque;
@@ -11,9 +26,12 @@ public class Voiture {
 	private String modele;
 	private int nbPlace;
 	private List<String> photos;
+	@ManyToOne
 	private Type type;
+	@ManyToOne
 	private Energie energie;
-	
+	@ManyToOne
+	private Agence agence;
 	
 	
 	
@@ -24,7 +42,7 @@ public class Voiture {
 	
 	public Voiture(double prixParJour, String plaque, String marque,
 			String modele, int nbPlace, List<String> photos, Type type,
-			Energie energie) {
+			Energie energie, Agence agence) {
 		super();
 		this.prixParJour = prixParJour;
 		this.plaque = plaque;
@@ -34,11 +52,12 @@ public class Voiture {
 		this.photos = photos;
 		this.type = type;
 		this.energie = energie;
+		this.agence = agence;
 	}
 	
 	public Voiture(int id, double prixParJour, String plaque, String marque,
 			String modele, int nbPlace, List<String> photos, Type type,
-			Energie energie) {
+			Energie energie, Agence agence) {
 		super();
 		this.id = id;
 		this.prixParJour = prixParJour;
@@ -49,6 +68,14 @@ public class Voiture {
 		this.photos = photos;
 		this.type = type;
 		this.energie = energie;
+		this.agence = agence;
+	}
+	
+	public Agence getAgence() {
+		return agence;
+	}
+	public void setAgence(Agence agence) {
+		this.agence = agence;
 	}
 	public double getPrixParJour() {
 		return prixParJour;

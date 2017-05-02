@@ -1,19 +1,37 @@
 package fr.eni.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class Location {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table (name = "LOCATION")
+public class Location implements Serializable{
 	
 	
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int id;
 	private Date dateDebut;
 	private Date dateFin;
 	private List<String> photosDebut;
 	private List<String> photosFin;
 	private boolean restitution;
+	@ManyToOne
 	private Voiture voiture;
+	@ManyToOne
 	private Client client;
+	@Transient
 	private double prix;
 	
 	
