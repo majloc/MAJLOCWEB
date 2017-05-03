@@ -3,6 +3,7 @@ package fr.eni.bean;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,6 +26,7 @@ public class Voiture implements Serializable{
 	private String marque;
 	private String modele;
 	private int nbPlace;
+	@ElementCollection(targetClass=String.class)
 	private List<String> photos;
 	@ManyToOne
 	private Type type;

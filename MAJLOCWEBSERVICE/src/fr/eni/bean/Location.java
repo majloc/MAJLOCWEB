@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,7 +25,9 @@ public class Location implements Serializable{
 	private int id;
 	private Date dateDebut;
 	private Date dateFin;
+	@ElementCollection(targetClass=String.class)
 	private List<String> photosDebut;
+	@ElementCollection(targetClass=String.class)
 	private List<String> photosFin;
 	private boolean restitution;
 	@ManyToOne
